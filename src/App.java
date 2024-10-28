@@ -31,6 +31,15 @@ public class App {
         int total = sum(9, 5);
         System.out.println("CON RETURN: " + total);
 
+        //invoco l'OVERLOADED METHODS
+        //1.
+        int result = howMuch(698, 541, 51);
+        System.out.println("Overloaded calc: " + result);
+        //
+        //2.
+        double finance = howMuch(1.23548, 12.1458962);
+        System.out.println("Overloaded res: " + finance);
+
     }
 
 
@@ -41,32 +50,44 @@ public class App {
         System.out.println("SENZA PARAMETRO: " + "fai qualcosa");
     }
 
-
     //dichiaro una funzione esplicitando il tipo
     //dichiaro il Tipo di Dato da passare al metodo
     static void cookPasta(String cibo){
         System.out.println("CON PARAMETRO: cuoci " + cibo);
     }
 
-    
     //dichiaro una funzione
     //NON RESTITUISCE UN VALORE NEL CODICE,
     //MA RESTA ALL'INTERNO DEL METODO 
     static void addition(int a, int b){
-
-        int sum = a + b;
-
-        System.out.println("CON PARAMETRO MA SENZA RETURN: " + sum);
+        int sum = a + b; //dichiaro l'istruzione
+        System.out.println("CON PARAMETRO MA SENZA RETURN: " + sum); //stampo l'istruzione non restituendo alcun valore
     }
 
     
     //PER RESTITUIRE ALL'ESTERNO IL VALORE ELABORATO DAL METODO, E' NECESSARIO IL RETURN
     //IN QUESTO CASO E' FONDAMENTALE TIPIZZARE ANCHE IL METODO
     static int sum(int a, int b){
-
         int add = a + b; //dichiaro l'istruzione
-
         return add; //restituisco il valore
     }
 
+
+    //////////////////////////
+    /*
+     * OVERLOADED METHODS
+     * sono metodi il cui nome può essere ripetuto più volte, purché le 'signature' (combinazioni di parametri) siano differenti
+     */
+
+    //dichiaro un metodo
+    static int howMuch(int a, int b, int c){
+        int calc = (a - b) * c;
+        return calc;
+    }
+
+    //dichiaro un metodo con lo stesso nome del precedente, ma diversa signature
+    static double howMuch(double a, double b){
+        double res = a * b;
+        return res;
+    }
 }
